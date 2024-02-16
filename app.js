@@ -16,7 +16,19 @@ const server = http.createServer((req, res) => {
   }
 
   if (url === "/message" && method === "POST") {
-    fs.writeFileSync("message.txt", "DUMMY");
+    //this is for parsing request data with event listener (on())
+    const body = [];
+    req.on("data", (chunk) => {
+      console.log(chunk);
+      body.push(chunk);
+    });
+    req.on("end", () => {
+      const parseBody = Buffer.concat(body).toString();
+      // console.log(parseBody);
+      const message = parseBody.split("=")[1];
+      fs.writeFileSync("message.txt", message);
+    });
+
     res.status = 302;
     res.setHeader("Location", "/"); //this is for rediricting request or route
     return res.end();
