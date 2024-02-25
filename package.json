@@ -1,0 +1,20 @@
+{
+  "name": "nodejs-max",
+  "version": "1.0.0",
+  "description": "Complete Node.js Guide Courses",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Rasyidannas/NodeJS-Max.git"
+  },
+  "author": "rasyid-annas",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Rasyidannas/NodeJS-Max/issues"
+  },
+  "homepage": "https://github.com/Rasyidannas/NodeJS-Max#readme"
+}
