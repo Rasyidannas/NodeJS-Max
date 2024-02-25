@@ -16,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/Rasyidannas/NodeJS-Max/issues"
   },
-  "homepage": "https://github.com/Rasyidannas/NodeJS-Max#readme"
+  "homepage": "https://github.com/Rasyidannas/NodeJS-Max#readme",
+  "devDependencies": {
+    "nodemon": "^3.1.0"
+  }
 }
