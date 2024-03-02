@@ -14,7 +14,8 @@ app.use("/add-product", (req, res, next) => {
   );
 });
 
-app.use("/product", (req, res) => {
+//this will only available for post and not get/put/patch/delete
+app.post("/product", (req, res) => {
   console.log(req.body); //this will be output because body-parser
   res.redirect("/");
 });
