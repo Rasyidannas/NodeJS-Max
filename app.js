@@ -10,8 +10,8 @@ const app = express();
 //this for parse request in middleware with 3rd part library
 app.use(bodyParser.urlencoded({ extended: false }));
 
-//this for register admin in routes folder
-app.use(adminRoutes);
+//this for register admin in routes folder and Fitering Path in "/admin" will auto add ("/admin/add-product") for access route in adminRoutes
+app.use("/admin", adminRoutes);
 //this for register shop in routes folder
 app.use(shopRoutes);
 
