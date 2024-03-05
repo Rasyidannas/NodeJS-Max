@@ -1,11 +1,12 @@
+const path = require("path");
+
 const express = require("express");
 
 const router = express.Router();
 
-//this middleware only for / or all with /
+//this middleware only for / or all with "/"
 router.get("/", (req, res, next) => {
-  //   console.log("in another middleware");
-  res.send("<h1>Hello from Express!</h1>");
+  res.sendFile(path.join(__dirname, "../", "views", "shop.html")); // this is same "../views/shop.html"
 });
 
 module.exports = router;
