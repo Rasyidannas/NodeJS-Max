@@ -11,6 +11,7 @@ const app = express();
 
 //this for parse request in middleware with 3rd part library
 app.use(bodyParser.urlencoded({ extended: false }));
+app.use(express.static(path.join(__dirname, "public"))); //this for add file static (asset images, and css)
 
 //this for register admin in routes folder and Fitering Path in "/admin" will auto add ("/admin/add-product") for access route in adminRoutes
 app.use("/admin", adminRoutes);
