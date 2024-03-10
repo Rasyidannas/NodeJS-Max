@@ -9,8 +9,9 @@ const router = express.Router();
 
 //this middleware only for / or all with "/"
 router.get("/", (req, res, next) => {
-  console.log("shop.js", adminData.products);
-  res.render("shop");
+  // console.log("shop.js", adminData.products);
+  const products = adminData.products;
+  res.render("shop", { prods: products, docTitle: "Shop" }); //second argument for send data to shop.pug file
 });
 
 module.exports = router;
