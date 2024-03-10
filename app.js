@@ -9,6 +9,10 @@ const bodyParser = require("body-parser");
 
 const app = express();
 
+//this for register template engine
+app.set("view engine", "pug");
+app.set("views", "views");
+
 //this for parse request in middleware with 3rd part library
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(express.static(path.join(__dirname, "public"))); //this for add file static (asset images, and css)
