@@ -10,7 +10,10 @@ const products = [];
 
 //this middleware only for /add-product url
 router.get("/add-product", (req, res, next) => {
-  res.render("add-product", { pageTitle: "Add Product" });
+  res.render("add-product", {
+    pageTitle: "Add Product",
+    path: "/admin/add-product",
+  });
 });
 
 //this will only available for post and not get/put/patch/delete
