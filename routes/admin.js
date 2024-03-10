@@ -10,7 +10,7 @@ const products = [];
 
 //this middleware only for /add-product url
 router.get("/add-product", (req, res, next) => {
-  res.sendFile(path.join(rootDir, "views", "add-product.html"));
+  res.render("add-product", { pageTitle: "Add Product" });
 });
 
 //this will only available for post and not get/put/patch/delete
