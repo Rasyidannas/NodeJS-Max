@@ -6,11 +6,13 @@ const admindata = require("./routes/admin");
 const shopRoutes = require("./routes/shop");
 
 const bodyParser = require("body-parser");
+const expressHbs = require("express-handlebars");
 
 const app = express();
 
+app.engine("hbs", expressHbs());
 //this for register template engine
-app.set("view engine", "pug");
+app.set("view engine", "hbs");
 app.set("views", "views");
 
 //this for parse request in middleware with 3rd part library
