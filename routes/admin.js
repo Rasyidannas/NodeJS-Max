@@ -6,6 +6,8 @@ const rootDir = require("../util/path");
 
 const router = express.Router();
 
+const products = [];
+
 //this middleware only for /add-product url
 router.get("/add-product", (req, res, next) => {
   res.sendFile(path.join(rootDir, "views", "add-product.html"));
@@ -13,8 +15,11 @@ router.get("/add-product", (req, res, next) => {
 
 //this will only available for post and not get/put/patch/delete
 router.post("/add-product", (req, res) => {
-  console.log(req.body); //this will be output because body-parser
+  // console.log(req.body); //this will be output because body-parser
+  products.push({ title: req.body.title });
   res.redirect("/");
 });
 
-module.exports = router;
+//this will access by ebject
+exports.routes = router;
+exports.products = products;
