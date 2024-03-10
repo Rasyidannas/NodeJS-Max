@@ -11,7 +11,12 @@ const router = express.Router();
 router.get("/", (req, res, next) => {
   // console.log("shop.js", adminData.products);
   const products = adminData.products;
-  res.render("shop", { prods: products, pageTitle: "Shop", path: "/" }); //second argument for send data to shop.pug file
+  res.render("shop", {
+    prods: products,
+    pageTitle: "Shop",
+    path: "/",
+    hasProducts: products.length > 0,
+  }); //second argument for send data to shop.pug file
 });
 
 module.exports = router;
