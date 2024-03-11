@@ -6,20 +6,11 @@ const admindata = require("./routes/admin");
 const shopRoutes = require("./routes/shop");
 
 const bodyParser = require("body-parser");
-const expressHbs = require("express-handlebars");
 
 const app = express();
 
-app.engine(
-  "hbs",
-  expressHbs({
-    layoutDir: "views/layouts/",
-    defaultLayout: "main-layout",
-    extname: "hbs",
-  })
-);
 //this for register template engine
-app.set("view engine", "hbs");
+app.set("view engine", "ejs");
 app.set("views", "views");
 
 //this for parse request in middleware with 3rd part library
